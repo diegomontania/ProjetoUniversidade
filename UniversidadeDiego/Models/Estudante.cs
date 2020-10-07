@@ -10,6 +10,5 @@ namespace UniversidadeDiego.Models
         public string SobreNome { get; set; }
         public DateTime DataMatricula { get; set; }
         public ICollection<Matricula> Matriculas { get; set; }
-
     }
 }
