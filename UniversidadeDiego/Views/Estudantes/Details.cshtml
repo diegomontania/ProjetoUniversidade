@@ -1,7 +1,7 @@
 ﻿@model UniversidadeDiego.Models.Estudante
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes";
 }
 
 <h1>Detalhes</h1>
@@ -16,23 +16,27 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Nome)
         </dd>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.SobreNome)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SobreNome)
         </dd>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.DataMatricula)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DataMatricula)
         </dd>
-        <!--Exibe as matriculas do estudante -->
-        <dt>
+
+        <!--Exibe as matriculas do estudante em tabela -->
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Matriculas)
         </dt>
-        <dd>
+
+        <dd class="col-sm-10">
             <table class="table">
                 <tr>
                     <th>Curso</th>
@@ -55,6 +59,6 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-info" asp-action="Edit" asp-route-id="@Model.EstudanteID">Editar</a> |
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.EstudanteID">Editar</a> |
     <a class="btn btn-info" asp-action="Index">Voltar</a>
 </div>

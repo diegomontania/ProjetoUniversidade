@@ -4,7 +4,7 @@
     ViewData["Title"] = "Painel de alunos";
 }
 
-<h1>Painel de alunos - Index</h1>
+<h1>Painel de alunos</h1>
 
 <p>
     <a class="btn btn-success" asp-action="Create">Novo Aluno</a>
@@ -25,7 +25,8 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model) 
+{
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Nome)

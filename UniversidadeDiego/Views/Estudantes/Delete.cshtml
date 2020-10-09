@@ -1,16 +1,19 @@
 ﻿@model UniversidadeDiego.Models.Estudante
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Exclusão de alunos";
 }
 
 <h1>Delete</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<p class="text-danger">@ViewData["ErrorMessage"]</p>
+
+<h3>Tem certeza que deseja excluir este aluno?</h3>
 <div>
     <h4>Estudante</h4>
     <hr />
     <dl class="row">
+        <input type="hidden" asp-for="EstudanteID" />
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
@@ -33,7 +36,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="EstudanteID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
         <a class="btn btn-info" asp-action="Index">Voltar</a>
     </form>
 </div>

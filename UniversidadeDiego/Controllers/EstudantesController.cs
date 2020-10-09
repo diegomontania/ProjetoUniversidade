@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Data.Common;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -61,16 +62,32 @@ namespace UniversidadeDiego.Controllers
         // POST: Estudantes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        //Removendo 'EstudanteID' do atributo Bind porque EstudanteID será 
+        //o valor da chave primária que o SQL Server definirá automaticamente 
+        //quando a linha for inserida. A entrada do usuário não define o valor ID.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EstudanteID,Nome,SobreNome,DataMatricula")] Estudante estudante)
+        public async Task<IActionResult> Create([Bind("Nome,SobreNome,DataMatricula")] Estudante estudante)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _context.Add(estudante);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _context.Add(estudante);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
+            catch (DbException /*ex*/)
+            {
+                //Logar o erro (descomente a variável ex e escreva um log
+                ModelState.AddModelError("", "Não foi possível salvar. " +
+                    "Tente novamente, e se o problema persistir " +
+                    "chame o suporte.");
+                throw;
+            }
+           
             return View(estudante);
         }
 
@@ -93,40 +110,39 @@ namespace UniversidadeDiego.Controllers
         // POST: Estudantes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ActionName("Edit")]      //especificando o ActionName que é chamado no 'Edit.cshtml'
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EstudanteID,Nome,SobreNome,DataMatricula")] Estudante estudante)
+        public async Task<IActionResult> EditPost(int? id)
         {
-            if (id != estudante.EstudanteID)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            //recebe o estudante a partir da id recebida
+            var atualizaEstudante = await _context.Estudantes.SingleOrDefaultAsync(s => s.EstudanteID == id);
+
+            if (await TryUpdateModelAsync(
+                atualizaEstudante, "", s => s.Nome, s => s.SobreNome, s => s.DataMatricula))
             {
                 try
                 {
-                    _context.Update(estudante);
-                    await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();  /*salva assincrono*/
+                    return RedirectToAction("Index");   /*redireciona a index de 'Estudante'*/
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (DbUpdateException /*ex*/)
                 {
-                    if (!EstudanteExists(estudante.EstudanteID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    //Logar o erro (descomente a variável ex e escreva um log
+                    ModelState.AddModelError("", "Não foi possível salvar. " +
+                        "Tente novamente, e se o problema persistir " +
+                        "chame o suporte.");
                 }
-                return RedirectToAction(nameof(Index));
             }
-            return View(estudante);
+            return View(atualizaEstudante);
         }
 
         // GET: Estudantes/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
@@ -148,10 +164,27 @@ namespace UniversidadeDiego.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var estudante = await _context.Estudantes.FindAsync(id);
-            _context.Estudantes.Remove(estudante);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            var estudante = await _context.Estudantes
+                .AsNoTracking()
+                .SingleOrDefaultAsync(m => m.EstudanteID == id);
+
+            if (estudante == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            try
+            {
+                _context.Estudantes.Remove(estudante);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Logar o erro
+                return RedirectToAction("Delete", new { id, saveChangesError = true });
+            }
+            
         }
 
         private bool EstudanteExists(int id)
