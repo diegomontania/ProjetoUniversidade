@@ -8,17 +8,20 @@ namespace UniversidadeDiego.Data
     {
         public static void Initialize(EscolaContexto contexto)
         {
-            contexto.Database.EnsureCreated();  /*cria o banco caso ele não exista : C:/Users/<user>*/
+            /*cria o banco local caso ele não exista : C:/Users/<user>*/
+            /*contexto.Database.EnsureCreated();*/
 
-            // procura por qualquer estudante
+            //verifica se já existe dados no banco, se existir não popule
             if (contexto.Estudantes.Any())
             {
                 return; //O banco foi inicializado 
             }
-
-            AdicionaEstudantes(contexto);
-            AdicionaCursos(contexto);
-            AdicionaMatriculas(contexto);
+            else
+            {
+                AdicionaEstudantes(contexto);
+                AdicionaCursos(contexto);
+                AdicionaMatriculas(contexto);
+            }
         }
 
         private static void AdicionaEstudantes(EscolaContexto contexto)
