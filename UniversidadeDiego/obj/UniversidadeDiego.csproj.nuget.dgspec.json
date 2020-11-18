@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Diego\\source\\repos\\UniversidadeDiego\\UniversidadeDiego\\UniversidadeDiego.csproj": {}
+    "C:\\Users\\Diego\\source\\repos\\UniversidadeDiego\\ProjetoUniversidade\\UniversidadeDiego\\UniversidadeDiego.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Diego\\source\\repos\\UniversidadeDiego\\UniversidadeDiego\\UniversidadeDiego.csproj": {
+    "C:\\Users\\Diego\\source\\repos\\UniversidadeDiego\\ProjetoUniversidade\\UniversidadeDiego\\UniversidadeDiego.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Diego\\source\\repos\\UniversidadeDiego\\UniversidadeDiego\\UniversidadeDiego.csproj",
+        "projectUniqueName": "C:\\Users\\Diego\\source\\repos\\UniversidadeDiego\\ProjetoUniversidade\\UniversidadeDiego\\UniversidadeDiego.csproj",
         "projectName": "UniversidadeDiego",
-        "projectPath": "C:\\Users\\Diego\\source\\repos\\UniversidadeDiego\\UniversidadeDiego\\UniversidadeDiego.csproj",
+        "projectPath": "C:\\Users\\Diego\\source\\repos\\UniversidadeDiego\\ProjetoUniversidade\\UniversidadeDiego\\UniversidadeDiego.csproj",
         "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Diego\\source\\repos\\UniversidadeDiego\\UniversidadeDiego\\obj\\",
+        "outputPath": "C:\\Users\\Diego\\source\\repos\\UniversidadeDiego\\ProjetoUniversidade\\UniversidadeDiego\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "E:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\Diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -78,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
