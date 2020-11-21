@@ -323,7 +323,6 @@ C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDi
 C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\UniversidadeDiego.csprojAssemblyReference.cache
 C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\UniversidadeDiego.AssemblyInfoInputs.cache
 C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\UniversidadeDiego.AssemblyInfo.cs
 C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\UniversidadeDiego.csproj.CoreCompileInputs.cache
@@ -360,3 +359,9 @@ C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDi
 C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\UniversidadeDiego.dll
 C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\UniversidadeDiego.pdb
 C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\UniversidadeDiego.genruntimeconfig.cache
+C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\UniversidadeDiego.csprojAssemblyReference.cache
+C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\Razor\Views\Instrutores\Create.cshtml.g.cs
+C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\Razor\Views\Instrutores\Delete.cshtml.g.cs
+C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\Razor\Views\Instrutores\Details.cshtml.g.cs
+C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\Razor\Views\Instrutores\Edit.cshtml.g.cs
+C:\Users\Diego\source\repos\UniversidadeDiego\ProjetoUniversidade\UniversidadeDiego\obj\Debug\netcoreapp3.1\Razor\Views\Instrutores\Index.cshtml.g.cs
