@@ -1,31 +1,31 @@
 ﻿@model IEnumerable<UniversidadeDiego.Models.Instrutor>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Painel de Instrutores";
 }
 
-<h1>Index</h1>
+<h1>Painel de Instrutores</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-success" asp-action="Create">Novo Instrutor</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                Nome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SobreNome)
+                Sobrenome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Idade)
+                Idade
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TurnoAtual)
+                Turno Atual
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataMatricula)
+                Matricula
             </th>
             <th></th>
         </tr>
@@ -49,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.DataMatricula)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.InstrutorID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.InstrutorID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.InstrutorID">Delete</a>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.InstrutorID">Editar</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.InstrutorID">Detalhes</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.InstrutorID">Deletar</a>
             </td>
         </tr>
 }
