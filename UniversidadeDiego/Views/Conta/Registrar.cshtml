@@ -1,0 +1,27 @@
+﻿@model UniversidadeDiego.Models.ContaLogin
+
+@{
+    ViewData["Title"] = "Registrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Registrar</h1>
+
+@using (Html.BeginForm())
+{
+    <h4>Registre informando os campos abaixo!</h4>
+    <hr />
+
+    //mostra resultado de validação
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    //exibe o formulário
+    @Html.EditorForModel()
+
+    //cria o form
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Registrar" class="btn btn-default" />
+        </div>
+    </div>
+}
